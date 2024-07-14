@@ -3,9 +3,11 @@ import Model from "./Model";
 import styles from "./Cartitem.module.css";
 import CartList from "./CartList";
 import Cart_Context from "../Context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const CartItem = (props) => {
   const crtctx = useContext(Cart_Context);
+  const navigate = useNavigate();
 
   const totalAmount = `$${crtctx.totalAmount.toFixed(2)}`;
 
@@ -26,6 +28,7 @@ const CartItem = (props) => {
           name={item.name}
           price={item.price}
           amount={item.amount}
+          image={item.image}
           onAdd={addItems.bind(null, item)}
           onRemove = {removeItem.bind(null ,item.id)}
         />
@@ -44,7 +47,7 @@ const CartItem = (props) => {
         <button onClick={props.onClose} className={styles["button--alt"]}>
           Close
         </button>
-        {hasItem && <button className={styles.button}>Order</button>}
+        {hasItem && <button onClick={()=>{navigate('/order');props.onClose()}} className={styles.button}>Order</button>}
       </div>
     </Model>
   );

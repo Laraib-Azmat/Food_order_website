@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import CartContext from "./CartContext";
-
+import { food_list } from "../../assets/assets";
 
 const defaultState = {
   items: [],
@@ -78,8 +78,9 @@ const  CartProvider=(props)=> {
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    food_list
   };
-
+console.log(cartState.items)
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}

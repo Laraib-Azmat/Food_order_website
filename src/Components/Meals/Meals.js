@@ -1,12 +1,20 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import MealSummary from "./MealSummary";
 import MealList from "./MealList";
+import { Menu } from "../Menu/Menu";
+import Card from "../UI/Card";
 
 const Meals = () => {
+
+    const [category, setCategory] = useState("All")
+
     return (
         <Fragment>
             <MealSummary />
-            <MealList/>
+            <Card>
+            <Menu category={category} setCategory={setCategory} />
+            <MealList category={category} />
+            </Card>
       </Fragment>  
     );
 }

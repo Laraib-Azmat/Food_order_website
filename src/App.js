@@ -3,11 +3,17 @@ import Header from "./Components/Layout/Header";
 import Meals from "./Components/Meals/Meals";
 import CartItem from "./Components/Cart/CartItem";
 import CartProvider from "./Components/Context/CartProvider";
+import { Route, Routes } from "react-router-dom";
+import { Contact } from "./Components/Contact/Contact";
+import LoginSignup from "./Components/Register/LoginSignup";
+import Footer from "./Components/Footer/Footer";
+import PlaceOrder from "./Components/Order/PlaceOrder";
 
 
 function App() {
 
   const [cartshow, setCartShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(false)
 
   const showCart = () => {
     setCartShow(true);
@@ -17,13 +23,25 @@ function App() {
     setCartShow(false);
   }
 
+  const closeLogin = () => {
+    setShowLogin(false);
+  }
+
   return (
     <CartProvider>
+      {showLogin && <LoginSignup onClose={closeLogin} />}
    { cartshow  &&   <CartItem onClose={hideCart} />}
-      <Header onShow={showCart} />
-      <main>
-        <Meals />
-        </main>
+      <Header onShow={showCart} setLogin={setShowLogin} />
+    
+       <Routes>
+        <Route path="/" element ={<Meals/>}/>
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/register" element={LoginSignup} />
+        <Route path="/order" element={<PlaceOrder/>} />
+       </Routes>
+
+       <Footer/>
+       
     </CartProvider>
   );
 }

@@ -17,3 +17,18 @@
     margin-top: 0;
   }
   
+  @media(max-width:900px){
+    .summary{
+      padding: 0.5rem;
+      margin-top: -5rem;
+    }
+    .summary h2{
+      font-size: 1.2rem;
+    }
+  }
+
+  @media(max-width:400px){
+.summary{
+  display: none;
+}
+  }

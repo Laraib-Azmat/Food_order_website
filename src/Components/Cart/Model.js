@@ -19,7 +19,7 @@ const portalElement = document.getElementById("overly");
 
 const Model = (props) => {
   return (
-    <Fragment>
+    <Fragment  s >
       {ReactDOM.createPortal(
         <Backdrop onClose={props.onClose} />,
         portalElement

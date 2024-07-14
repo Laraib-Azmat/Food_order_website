@@ -6,17 +6,28 @@
     padding: 1rem 0;
     margin: 1rem 0;
   }
-  
-  .cart-item h2 {
+  .heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .heading img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .heading h2 {
     margin: 0 0 0.5rem 0;
     color: #363636;
   }
   
   .summary {
-    width: 10rem;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content:end;
     align-items: center;
+    gap: 20px;
   }
   
   .price {
