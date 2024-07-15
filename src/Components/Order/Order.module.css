@@ -63,3 +63,9 @@ border-radius: 10px;
     font-weight: 600;
     font-size: 18px;
 }
+
+@media(max-width:600px){
+    .Order{
+        flex-direction: column;
+    }
+}
