@@ -4,6 +4,7 @@ import styles from './Header.module.css'
 import mealImg from '../../assets/HeaderPic.jpg'
 import HeaderCart from "./HeaderCart";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = (props)=> {
 
@@ -14,9 +15,21 @@ const Header = (props)=> {
         <>
 
             <header className={styles.header} >
-                <h2>OrdFoo.</h2>
+                <motion.h2
+                  initial={{ opacity: 0, y: -40 }}
+                  animate={{opacity:1,y:0}}
+                  transition={
+                    {type:'spring', delay:0.3, damping:10, stiffness:120}
+                   }
+                >OrdFoo.</motion.h2>
 
-                <ul className={styles['nav-links']}>
+                <motion.ul
+                 initial={{ opacity: 0, y: -40 }}
+                 animate={{opacity:1,y:0}}
+                 transition={
+                   {type:'spring', delay:0.3, damping:10, stiffness:120}
+                  }
+                className={styles['nav-links']}>
                 <Link onClick={()=>{window.scrollTo(0,0);setActiveLink("Home")}} to="/" style={{textDecorationLine:'none'}} > 
                 <p>Home</p>
                 {activeLink==="Home" && <hr/>} 
@@ -29,13 +42,19 @@ const Header = (props)=> {
                 <p>Contact</p>
                 {activeLink==="Contact" && <hr/>} 
                  </Link>
-                </ul>
+                </motion.ul>
               
               <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:10}}>
               <HeaderCart onShow={props.onShow} />
-                <button onClick={()=>props.setLogin(true)} className={styles.profileIcon}>
+                <motion.button
+                 initial={{ opacity: 0, y: -40 }}
+                 animate={{opacity:1,y:0}}
+                 transition={
+                   {type:'spring', delay:0.3, damping:10, stiffness:120}
+                  }
+                onClick={()=>props.setLogin(true)} className={styles.profileIcon}>
                     <img src={profileIcon} />
-                </button>
+                </motion.button>
               </div>
                
             </header>

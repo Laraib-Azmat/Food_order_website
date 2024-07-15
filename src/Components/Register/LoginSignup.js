@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import registerStyle from "./Register.module.css"
 import { assets } from '../../assets/assets';
 
 const LoginSignup = (props) => {
 
   const [state, setState] = useState("Login");
+
+  useEffect(() => {
+    document.body.classList.add(registerStyle['no-scroll']);
+    return () => {
+        document.body.classList.remove(registerStyle['no-scroll']);
+    };
+}, []);
 
   return (
    <div className={registerStyle['login-popup']}> 

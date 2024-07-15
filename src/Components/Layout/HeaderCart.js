@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import Cart_Context from "../Context/CartContext";
 import { useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const HeaderCart = (props) => {
   const contxt = useContext(Cart_Context);
@@ -33,7 +34,13 @@ const HeaderCart = (props) => {
 
 
   return (
-    <button className={btnClass} onClick={props.onShow}>
+    <motion.button
+    initial={{ opacity: 0, y: -40 }}
+    animate={{opacity:1,y:0}}
+    transition={
+      {type:'spring', delay:0.3, damping:10, stiffness:120}
+     }
+    className={btnClass} onClick={props.onShow}>
       <span>
         <FontAwesomeIcon
           className={styles.cartIcon}
@@ -43,7 +50,7 @@ const HeaderCart = (props) => {
       </span>
       <span>Your Cart</span>
       <span className={styles.badge}>{totalItem}</span>
-    </button>
+    </motion.button>
   );
 };
 
