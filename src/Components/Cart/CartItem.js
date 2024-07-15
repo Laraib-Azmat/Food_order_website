@@ -4,6 +4,7 @@ import styles from "./Cartitem.module.css";
 import CartList from "./CartList";
 import Cart_Context from "../Context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const CartItem = (props) => {
   const crtctx = useContext(Cart_Context);
@@ -44,10 +45,22 @@ const CartItem = (props) => {
         <span>{totalAmount}</span>
       </div>
       <div className={styles.actions}>
-        <button onClick={props.onClose} className={styles["button--alt"]}>
+        <motion.button 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{opacity:1,y:0}}
+        transition={
+          {type:'spring', delay:0.1, damping:10, stiffness:120}
+         }
+        onClick={props.onClose} className={styles["button--alt"]}>
           Close
-        </button>
-        {hasItem && <button onClick={()=>{navigate('/order');props.onClose()}} className={styles.button}>Order</button>}
+        </motion.button>
+        {hasItem && <motion.button
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{opacity:1,y:0}}
+        transition={
+          {type:'spring', delay:0.3, damping:10, stiffness:120}
+         }
+        onClick={()=>{navigate('/order');props.onClose()}} className={styles.button}>Order</motion.button>}
       </div>
     </Model>
   );
