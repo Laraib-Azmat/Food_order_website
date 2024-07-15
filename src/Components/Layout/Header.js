@@ -17,15 +17,15 @@ const Header = (props)=> {
                 <h2>OrdFoo.</h2>
 
                 <ul className={styles['nav-links']}>
-                <Link to="/" style={{textDecorationLine:'none'}} onClick={()=>setActiveLink("Home")}> 
+                <Link onClick={()=>{window.scrollTo(0,0);setActiveLink("Home")}} to="/" style={{textDecorationLine:'none'}} > 
                 <p>Home</p>
                 {activeLink==="Home" && <hr/>} 
                 </Link>
-                <Link to="/menu" style={{textDecorationLine:'none'}} onClick={()=>setActiveLink("Menu")}>
-                 <p>Menu</p>
-                 {activeLink==="Menu" && <hr/>} 
+                <Link to='/getApp' onClick={()=>{setActiveLink("app");window.scrollTo(0,0)}} style={{textDecorationLine:'none'}} >
+                 <p>Get App</p>
+                 {activeLink==="app" && <hr/>} 
                   </Link>
-                <Link to="/contact" style={{textDecorationLine:'none'}} onClick={()=>setActiveLink("Contact")}> 
+                <Link onClick={()=>{setActiveLink("Contact");window.scrollTo(0,0)}} to="/contact" style={{textDecorationLine:'none'}} > 
                 <p>Contact</p>
                 {activeLink==="Contact" && <hr/>} 
                  </Link>

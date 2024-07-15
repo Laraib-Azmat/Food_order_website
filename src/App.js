@@ -8,6 +8,7 @@ import { Contact } from "./Components/Contact/Contact";
 import LoginSignup from "./Components/Register/LoginSignup";
 import Footer from "./Components/Footer/Footer";
 import PlaceOrder from "./Components/Order/PlaceOrder";
+import AppDownload from "./Components/AppDownload/AppDownload";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/register" element={LoginSignup} />
         <Route path="/order" element={<PlaceOrder/>} />
+        <Route path="/getApp" element={<AppDownload/>} />
        </Routes>
 
        <Footer/>

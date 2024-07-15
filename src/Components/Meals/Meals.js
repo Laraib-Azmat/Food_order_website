@@ -4,6 +4,7 @@ import MealList from "./MealList";
 import { Menu } from "../Menu/Menu";
 import Card from "../UI/Card";
 
+
 const Meals = () => {
 
     const [category, setCategory] = useState("All")

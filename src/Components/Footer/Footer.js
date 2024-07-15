@@ -1,6 +1,7 @@
 import React from 'react';
 import footerStyle from "./Footer.module.css"
 import { assets } from '../../assets/assets';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -20,9 +21,9 @@ const Footer = () => {
             <div className={footerStyle['footer-center']}>
                 <h2>Company</h2>
                 <ul>
-                    <li>Home</li>
+                <Link onClick={()=>window.scrollTo(0,0)} to='/' style={{textDecoration:'none',color:'#fff'}}>  <li>Home</li> </Link>
                     <li>About Us</li>
-                    <li>Contact Us</li>
+                    <Link onClick={()=>window.scrollTo(0,0)} to='/contact' style={{textDecoration:'none',color:'#fff'}}><li >Contact Us</li></Link>
                     <li>Privacy Policy</li>
                 </ul>
 
