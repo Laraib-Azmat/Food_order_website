@@ -69,3 +69,17 @@
     }
    
 }
+
+@media(max-width:400px){
+  .cartBtn{
+    font: 11px;
+    padding: 0.3rem 1rem;
+    margin: 0rem 0.5rem;
+}
+
+.badge {
+  padding: 0rem 0.3rem;
+  margin-left: 0.5rem;
+}
+
+}

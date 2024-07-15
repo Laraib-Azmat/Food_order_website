@@ -88,8 +88,22 @@
   }
   @media(max-width:400px){
 .header{
-  flex-direction: column;
-  padding-bottom: 20px;
-
+  padding-bottom: 10px;
 }
+.header h2{
+  font-size: 15px;
+}
+.profileIcon{
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+
+  }
+
+  @media(max-width:300px){
+    .header{
+      flex-direction: column;
+      gap: 10px;
+    }
   }
