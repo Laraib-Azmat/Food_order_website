@@ -9,7 +9,8 @@ import LoginSignup from "./Components/Register/LoginSignup";
 import Footer from "./Components/Footer/Footer";
 import PlaceOrder from "./Components/Order/PlaceOrder";
 import AppDownload from "./Components/AppDownload/AppDownload";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <CartProvider>
+      <ToastContainer/>
       {showLogin && <LoginSignup onClose={closeLogin} />}
    { cartshow  &&   <CartItem onClose={hideCart} />}
       <Header onShow={showCart} setLogin={setShowLogin} />

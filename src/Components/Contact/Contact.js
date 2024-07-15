@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import contactStyle from './ContactStyle.module.css'
 import emailjs from 'emailjs-com'
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 export const Contact = () => {
 
@@ -15,12 +16,12 @@ const handleSubmit = (e) => {
     emailjs.sendForm("service_g04pzjv","template_51tzsji", form.current,'wWbb2c9phUC-l3ssR')
     .then(res=>{
       console.log(res);
-      alert("Your message sent!")
+      toast.success("Your message sent!")
       form.current.reset();
     })
     .catch(error=>{
       console.log(error)
-      alert("Fail to sent,  try again")
+      toast.error("Error! Try later")
     })
 
 };
