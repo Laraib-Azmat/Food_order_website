@@ -74,3 +74,18 @@
     background-color: #8a2b06;
     color: white;
   }
+
+  @media (max-width:500px){
+    .heading h2{
+      font-size: 18px;
+    }
+    .heading img{
+      width: 40px;
+      height: 40px;
+    }
+    .cart-item button {
+        font-size: 1rem;
+        width : 2rem;
+        margin: 0.2rem;
+    }
+  }

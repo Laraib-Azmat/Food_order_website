@@ -43,4 +43,16 @@
     background-color: #8a2b06;
     color: white;
   }
+
+  @media(max-width:500px){
+    .total{
+      font-size: 0.9rem;
+      margin: 0.6rem 0rem;
+    }
+    .actions button {
+      font-size: 12px;
+      padding: 0.3rem 1rem;
+
+    }
+  }
   

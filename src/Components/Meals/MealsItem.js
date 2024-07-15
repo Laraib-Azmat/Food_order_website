@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import CartContext from "../Context/CartContext";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const MealsItem = ({id,name,image,price,description}) => {
 
@@ -55,12 +57,16 @@ const MealsItem = ({id,name,image,price,description}) => {
             }
           className={mealStyles['mealItem-img']} src={image} alt="meal-image" />
           {!itemAmount>0 ?
-        <motion.img 
-        whileHover={{scale:1.3}}
+          <motion.div
+          whileHover={{scale:1.3}}
         transition={
           {type:'spring', delay:0.2, damping:10, stiffness:100}
          }
-        src={assets.add_icon_white} className={mealStyles.add} onClick={addToCart} alt="Add" /> :
+         onClick={addToCart}
+         className={mealStyles.add}
+          >
+              <FontAwesomeIcon icon={faPlus} />
+          </motion.div>:
         <div className={mealStyles['foodItem-counter']}>
           <img onClick={()=>removeItem(id)} src={assets.remove_icon_red} alt="remove" />
           <p>{itemAmount}</p>

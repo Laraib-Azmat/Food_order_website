@@ -60,7 +60,7 @@ const CartItem = (props) => {
         transition={
           {type:'spring', delay:0.3, damping:10, stiffness:120}
          }
-        onClick={()=>{navigate('/order');props.onClose()}} className={styles.button}>Order</motion.button>}
+        onClick={()=>{window.scrollTo(0,0);navigate('/order');props.onClose()}} className={styles.button}>Order</motion.button>}
       </div>
     </Model>
   );
