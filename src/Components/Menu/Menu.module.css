@@ -41,7 +41,6 @@ font-weight: 600;
     min-width: 80px;
     cursor: pointer;
     border-radius: 50%;
-    transition: 0.2s;
 }
 .exploreMenu-listItem p{
     margin-top: 10px;

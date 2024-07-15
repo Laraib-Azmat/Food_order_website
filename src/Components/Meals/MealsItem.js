@@ -2,6 +2,7 @@ import mealStyles from "./MealsItem.module.css";
 import { useContext, useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import CartContext from "../Context/CartContext";
+import { motion } from "framer-motion";
 
 const MealsItem = ({id,name,image,price,description}) => {
 
@@ -38,12 +39,28 @@ const MealsItem = ({id,name,image,price,description}) => {
 
   return (
 
-    <div className={mealStyles.mealItem}>
+    <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{opacity:1,y:0}}
+    transition={
+      {type:'spring', delay:0.1, damping:10, stiffness:120}
+     }
+    className={mealStyles.mealItem}>
 
       <div className={mealStyles['mealItem-imgConatainer']}>
-          <img className={mealStyles['mealItem-img']} src={image} alt="meal-image" />
+          <motion.img
+           whileHover={{scale:1.1}}
+           transition={
+             {type:'spring', delay:0.2, damping:10, stiffness:150}
+            }
+          className={mealStyles['mealItem-img']} src={image} alt="meal-image" />
           {!itemAmount>0 ?
-        <img src={assets.add_icon_white} className={mealStyles.add} onClick={addToCart} alt="Add" /> :
+        <motion.img 
+        whileHover={{scale:1.3}}
+        transition={
+          {type:'spring', delay:0.2, damping:10, stiffness:100}
+         }
+        src={assets.add_icon_white} className={mealStyles.add} onClick={addToCart} alt="Add" /> :
         <div className={mealStyles['foodItem-counter']}>
           <img onClick={()=>removeItem(id)} src={assets.remove_icon_red} alt="remove" />
           <p>{itemAmount}</p>
@@ -65,7 +82,7 @@ const MealsItem = ({id,name,image,price,description}) => {
 
       </div>
 
-    </div>
+    </motion.div>
   );
 };
 export default MealsItem;
