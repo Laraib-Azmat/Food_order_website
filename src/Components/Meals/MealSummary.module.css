@@ -25,9 +25,30 @@
     .summary h2{
       font-size: 1.2rem;
     }
+    .summary p{
+      font-size: 14px;
+    }
+  }
+  @media(max-width:450px){
+    .summary{
+        padding: 0.3rem;
+        
+    }
+    .summary h2{
+      font-size: 1rem;
+    }
+    .summary p{
+      font-size: 12px;
+    }
   }
 
   @media(max-width:400px){
+    .hidePara{
+      display: none;
+    }
+  }
+
+  @media(max-width:300px){
 .summary{
   display: none;
 }

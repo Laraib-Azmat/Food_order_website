@@ -52,3 +52,21 @@ font-weight: 600;
     border: 4px solid tomato;
     padding: 2px;
 }
+
+@media(max-width:500px){
+    .exploreMenu h1{
+        font-size: 24px;
+    }
+    .exploreMenu p{
+        text-align: center;
+    }
+    .exploreMenu-list{
+        gap: 15px;
+        margin: 10px auto;
+        width: 100%;
+    }
+    .exploreMenu-listItem img{
+        width: 5vw;
+        min-width: 70px;
+    }
+}
