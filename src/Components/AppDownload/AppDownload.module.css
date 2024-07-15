@@ -19,9 +19,5 @@
 .app-platform img{
     width: max(30vw,120px);
     max-width: 180px;
-    transition: 0.5s;
     cursor: pointer;
-}
-.app-platform img:hover{
-   transform: scale(1.05);
 }

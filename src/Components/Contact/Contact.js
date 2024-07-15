@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import contactStyle from './ContactStyle.module.css'
 import emailjs from 'emailjs-com'
-
+import { motion } from 'framer-motion';
 
 export const Contact = () => {
 
@@ -28,34 +28,77 @@ const handleSubmit = (e) => {
   return (
  <div className={contactStyle.contactDiv}>
    <div className={contactStyle["contact-form"]}>
-            <h2>Contact Us</h2>
+            <motion.h2
+            initial={{ opacity: 0, y: -50 }}
+            animate={{opacity:1,y:0}}
+            transition={
+              {type:'spring', delay:0.3, damping:10, stiffness:120}
+             }
+            >Contact Us</motion.h2>
             <form  ref={form} onSubmit={handleSubmit}>
                 <div className={contactStyle['form-group']}>
-                    <label htmlFor="name">Name:</label>
-                    <input 
+                    <motion.label
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{opacity:1,x:0}}
+                    transition={
+                      {type:'spring', delay:0.2, damping:10, stiffness:120}
+                     }
+                    htmlFor="name">Name:</motion.label>
+                    <motion.input
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{opacity:1,x:0}}
+                    transition={
+                      {type:'spring', delay:0.2, damping:10, stiffness:120}
+                     } 
                         type="text" 
                         name="to_name"
                         required 
                     />
                 </div>
                 <div className={contactStyle['form-group']}>
-                    <label htmlFor="email">Email:</label>
-                    <input 
+                <motion.label
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{opacity:1,x:0}}
+                    transition={
+                      {type:'spring', delay:0.4, damping:10, stiffness:120}
+                     } htmlFor="email">Email:</motion.label>
+                    <motion.input
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{opacity:1,x:0}}
+                    transition={
+                      {type:'spring', delay:0.4, damping:10, stiffness:120}
+                     } 
                         type="email" 
                         name="from_email" 
                         required 
                     />
                 </div>
                 <div className={contactStyle['form-group']}>
-                    <label htmlFor="message">Message:</label>
-                    <textarea 
+                <motion.label
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{opacity:1,x:0}}
+                    transition={
+                      {type:'spring', delay:0.6, damping:10, stiffness:120}
+                     } htmlFor="message">Message:</motion.label>
+                    <motion.textarea
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{opacity:1,x:0}}
+                    transition={
+                      {type:'spring', delay:0.6, damping:10, stiffness:120}
+                     }
                         id="message" 
                         name="message"  
                         rows="4" 
                         required 
                     />
                 </div>
-                <button className={contactStyle.submitBtn} type="submit">Submit</button>
+                <motion.button 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{opacity:1,y:0}}
+                transition={
+                  {type:'spring', delay:0.4, damping:10, stiffness:120}
+                 }
+                className={contactStyle.submitBtn} type="submit">Submit</motion.button>
             </form>
         </div>
  </div>

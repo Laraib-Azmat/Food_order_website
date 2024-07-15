@@ -2,6 +2,7 @@ import React from 'react';
 import footerStyle from "./Footer.module.css"
 import { assets } from '../../assets/assets';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
@@ -9,12 +10,45 @@ const Footer = () => {
         <div className={footerStyle['footer-content']}>
 
             <div className={footerStyle['footer-left']}>
-                <h2>OrdFoo.</h2>
-                <p>Order food and groceries online with OrdFoo now and enjoy a great dining experience!</p>
+                    <Link onClick={()=>window.scrollTo(0,0)} to='/' style={{textDecoration:'none'}}><motion.h2
+                    initial={{ opacity: 0, y: -60 }}
+                    whileInView={{opacity:1,y:0}}
+                    transition={
+                      {type:'spring', delay:0.2, damping:10, stiffness:120}
+                     }
+                    >OrdFoo.</motion.h2></Link>
+                <motion.p
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{opacity:1,y:0}}
+                transition={
+                  {type:'spring', delay:0.4, damping:10, stiffness:120}
+                 }
+                >Order food and groceries online with OrdFoo now and enjoy a great dining experience!</motion.p>
                 <div className={footerStyle['footer-social-icons']}>
-                    <img src={assets.facebook_icon} alt='facebook' />
-                    <img src={assets.twitter_icon} alt='twitter' />
-                    <img src={assets.linkedin_icon} alt='linkedin' />
+                    <motion.img 
+                    initial={{ opacity: 0, x: -40 }}
+    whileInView={{opacity:1,x:0}}
+    whileHover={{scale:1.1}}
+    transition={
+      {type:'spring', delay:0.4, damping:10, stiffness:120}
+     }
+                    src={assets.facebook_icon} alt='facebook' />
+                    <motion.img 
+                    initial={{ opacity: 0, x: -40 }}
+    whileInView={{opacity:1,x:0}}
+    whileHover={{scale:1.1}}
+    transition={
+      {type:'spring', delay:0.3, damping:10, stiffness:120}
+     }
+                    src={assets.twitter_icon} alt='twitter' />
+                    <motion.img 
+                    initial={{ opacity: 0, x: -40 }}
+    whileInView={{opacity:1,x:0}}
+    whileHover={{scale:1.1}}
+    transition={
+      {type:'spring', delay:0.2, damping:10, stiffness:120}
+     }
+                    src={assets.linkedin_icon} alt='linkedin' />
                 </div>
             </div>
 
